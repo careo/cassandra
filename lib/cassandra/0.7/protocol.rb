@@ -9,6 +9,7 @@ class Cassandra
     end
 
     def _remove(key, column_path, timestamp, consistency_level)
+      timestamp = CassandraThrift::Clock.new(:timestamp => timestamp)
       client.remove(key, column_path, timestamp, consistency_level)
     end
 
