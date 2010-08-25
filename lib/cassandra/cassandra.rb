@@ -47,7 +47,7 @@ class Cassandra
   WRITE_DEFAULTS = {
     :count => 1000,
     :timestamp => nil,
-    :consistency => Consistency::ONE,
+    :consistency => Consistency::QUORUM,
     :ttl => nil
   }.freeze
 
@@ -56,7 +56,7 @@ class Cassandra
     :start => nil,
     :finish => nil,
     :reversed => false,
-    :consistency => Consistency::ONE
+    :consistency => Consistency::QUORUM
   }.freeze
   
   THRIFT_DEFAULTS = {
